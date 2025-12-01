@@ -20,10 +20,27 @@
 		"version": "2.0.0",
 		"tasks": [
 			{
+				"label": "Create venv if needed",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"-c",
+					"import os,sys; venv='.venv'; exists=os.path.isdir(venv); sys.exit(0) if exists else os.system(f'python -m venv {venv}')"
+				],
+				"presentation": {
+					"echo": true,
+					"reveal": "never",
+					"focus": false,
+					"panel": "shared"
+				},
+				"problemMatcher": []
+			},
+			{
 				"label": "Auto-install requirements on startup",
 				"type": "shell",
 				"command": "${workspaceFolder}/.venv/Scripts/python.exe",
 				"args": ["-m", "pip", "install", "-r", "requirements.txt"],
+				"dependsOn": "Create venv if needed",
 				"runOptions": {
 					"runOn": "folderOpen"
 				},
