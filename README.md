@@ -1,6 +1,6 @@
 # Calibration GUI
 
-Grafical User Interface for calibration tools
+Graphical User Interface for calibration tools
 
 ## Usage
 
