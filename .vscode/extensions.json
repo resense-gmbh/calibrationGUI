@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "mhutchie.git-graph",
+        "github.vscode-pull-request-github",
+        "davidanson.vscode-markdownlint",
+        "ms-vscode.powershell",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.vscode-python-envs"
+
+    ]
+}
