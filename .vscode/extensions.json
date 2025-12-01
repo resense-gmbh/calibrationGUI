@@ -7,7 +7,7 @@
         "ms-python.vscode-pylance",
         "ms-python.python",
         "ms-python.debugpy",
-        "ms-python.vscode-python-envs",
+        "ms-python.vscode-python-envs"
 
     ]
 }
