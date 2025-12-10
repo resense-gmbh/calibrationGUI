@@ -1,10 +1,10 @@
 import os
 import pandas as pd
 
-root_folder = r"C:\Users\DaryapS\WIKA\EM-CEO-ORG-Resense - Files\110_Manufacturing\Calibration\Si"
-output_file = os.path.join(root_folder, "combined_kpi_data.xlsx")
+root_folder = r"C:\Users\DaryapS\WIKA\EM-CEO-ORG-Resense - Files\110_Manufacturing\Calibration\Si\Hex_8"
+out_file = os.path.join("C:\Users\DaryapS\temp", "combined_kpi_data.xlsx")
 
-wanted_top_headers = ["Sensor_Name", "Fx", "Fy", "Fz", "Mx", "My", "Mz"]
+wanted_headers = ["Sensor_Name", "Fx", "Fy", "Fz", "Mx", "My", "Mz"]
 
 all_dfs = []
 
@@ -22,7 +22,7 @@ for root, dirs, files in os.walk(root_folder):
                     for top, sub in df.columns
                 )
 
-                df = df[[col for col in df.columns if col[0] in wanted_top_headers]]
+                df = df[[col for col in df.columns if col[0] in wanted_headers]]
 
                 all_dfs.append(df)
 
@@ -35,7 +35,7 @@ if all_dfs:
 
     combined.columns = [f"{a}_{b}" for a, b in combined.columns]
 
-    combined.to_excel(output_file, index=False)
-    print("Saved:", output_file)
+    combined.to_excel(out_file, index=False)
+    print("Saved:", out_file)
 else:
     print("No files found or matching columns.")
